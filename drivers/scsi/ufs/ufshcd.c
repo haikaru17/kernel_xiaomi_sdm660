@@ -4,6 +4,7 @@
  * This code is based on drivers/scsi/ufs/ufshcd.c
  * Copyright (C) 2011-2013 Samsung India Software Operations
  * Copyright (c) 2013-2020, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2018 XiaoMi, Inc.
  *
  * Authors:
  *	Santosh Yaraganavi <santosh.sy@samsung.com>
@@ -45,6 +46,7 @@
 #include <linux/blkdev.h>
 #include <asm/unaligned.h>
 
+#include <linux/hwinfo.h>
 #include "ufshcd.h"
 #include "ufshci.h"
 #include "ufs_quirks.h"
