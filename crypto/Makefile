@@ -138,3 +138,7 @@ obj-$(CONFIG_CRYPTO_ABLK_HELPER) += ablk_helper.o
 
 # Squeeze a little bit more juice from GCC
 ccflags-y := -O3
+
+# Squeeze a little bit more juice
+ccflags-y += $(call cc-option, -g0)
+ccflags-y += $(call cc-option, -Os)
