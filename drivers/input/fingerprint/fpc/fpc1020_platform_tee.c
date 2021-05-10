@@ -27,6 +27,7 @@
 #include <linux/atomic.h>
 #include <linux/delay.h>
 #include <linux/gpio.h>
+#include <linux/hwinfo.h>
 #include <linux/interrupt.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -488,12 +489,15 @@ static ssize_t device_prepare_set(struct device *dev,
 	int rc;
 	struct fpc1020_data *fpc1020 = dev_get_drvdata(dev);
 
-	if (!strncmp(buf, "enable", strlen("enable")))
-		rc = device_prepare(fpc1020, true);
-	else if (!strncmp(buf, "disable", strlen("disable")))
-		rc = device_prepare(fpc1020, false);
-	else
-		return -EINVAL;
+        if (!strncmp(buf, "enable", strlen("enable"))) {
+                rc = device_prepare(fpc1020, true);
+                update_hardware_info(TYPE_FP, 1);
+        } else if (!strncmp(buf, "disable", strlen("disable"))) {
+                rc = device_prepare(fpc1020, false);
+                update_hardware_info(TYPE_FP, 0);
+        } else {
+                return -EINVAL;
+        }
 
 	return rc ? rc : count;
 }
