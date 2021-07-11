@@ -2610,11 +2610,10 @@ int smblib_set_prop_system_temp_level(struct smb_charger *chg,
 #endif
 	else
 #endif
-	vote(chg->pl_disable_votable, THERMAL_DAEMON_VOTER,
 #ifdef CONFIG_MACH_MI
 			(chg->system_temp_level > 8) ? true : false, 0);
 #else
-			chg->system_temp_level ? true : false, 0);
+			(chg->system_temp_level ? true : false, 0);
 #endif
 
 #ifdef CONFIG_MACH_MI
