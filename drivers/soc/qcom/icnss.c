@@ -3415,7 +3415,7 @@ int icnss_wlan_enable(struct device *dev, struct icnss_wlan_enable_cfg *config,
 	if (ret)
 		goto out;
 skip:
-	ret = wlfw_wlan_mode_send_sync_msg(mode);
+	ret = (int)wlfw_wlan_mode_send_sync_msg((int)mode);
 out:
 	if (test_bit(SKIP_QMI, &quirks))
 		ret = 0;
