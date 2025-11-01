@@ -141,8 +141,8 @@ static struct jeita_fcc_cfg jeita_fcc_config = {
 #elif defined(CONFIG_MACH_XIAOMI_WHYRED)
 		{0,		50,		400000},
 		{51,		150,		1200000},
-		{151,		450,		2500000},
-		{451,		600,		1200000},
+		{151,		450,		2800000},
+		{451,		600,		2000000},
 #elif defined(CONFIG_MACH_XIAOMI_TULIP)
 		{0,		50,		400000},
 		{51,		150,		1200000},
