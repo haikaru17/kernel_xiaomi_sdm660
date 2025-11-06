@@ -2,8 +2,8 @@
 qcom,l6650cos_4000mah {
 	qcom, = <24>;
 	qcom,max-voltage-uv = <4400000>;
-	qcom,fastchg-current-ma = <2500>;
-	qcom,fg-cc-cv-threshold-mv = <4390>;
+	qcom,fastchg-current-ma = <2700>;
+	qcom,fg-cc-cv-threshold-mv = <4600>;
 	qcom,nom-batt-capacity-mah = <4000>;
 	qcom,batt-id-kohm = <100>;
 	qcom,battery-beta = <3380>;
