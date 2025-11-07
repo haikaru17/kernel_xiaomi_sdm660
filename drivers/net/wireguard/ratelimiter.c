@@ -183,7 +183,7 @@ int wg_ratelimiter_init(void)
 	 * we borrow their wisdom about good table sizes on different systems
 	 * dependent on RAM. This calculation here comes from there.
 	 */
-	totalrampages = atomic_long_read(&_totalram_pages);
+	totalrampages = totalram_pages();
 	table_size = (totalrampages > (1U << 30) / PAGE_SIZE) ? 8192 :
 		max_t(unsigned long, 16, roundup_pow_of_two(
 			(totalrampages << PAGE_SHIFT) /
